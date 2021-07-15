@@ -98,8 +98,8 @@ body {
 	grid-template-columns: repeat(2, 1fr) 12%;
 	/*name our grid areas so they are more manipulative later*/
 	grid-template-areas:
-		"volin panin power"
-		"vollab panlab power";
+		"volin dblin panin power"
+		"vollab dbllab panlab power";
 	justify-items: center; align-items: center;
 	padding: 2vmax;
 	background-color: var(--boxSecond);
@@ -112,6 +112,7 @@ body {
 		grid-template-columns: 16% 1fr 12%;
 		grid-template-areas:
 			"vollab volin power"
+			"dbllab dblin power"
 			"panlab panin power";
 	}
 }
@@ -127,14 +128,21 @@ body {
 .control-volume::before {content: 'min';}
 .control-volume::after {content: 'max';}
 label[for="volume"] {grid-area: vollab; margin-top: 15px;}
+.control-dbl {grid-area: dblin;}
+.control-dbl::before {content: 'min';}
+.control-dbl::after {content: 'max';}
+label[for="dbl"] {grid-area: dbllab; margin-top: 15px;}
 .control-panner {grid-area: panin;}
 .control-panner::before {content: 'left';}
 .control-panner::after {content: 'right';}
 label[for="panner"] {grid-area: panlab; margin-top: 15px;}
 @media screen and (max-width: 570px) {
-	label[for="volume"], label[for="panner"] {margin-top: 0px;}
+	label[for="volume"], label[for="dbl"],label[for="panner"] {margin-top: 0px;}
 	.control-volume {margin-bottom: 20px;}
 }
+.control-dbl {margin-bottom: 20px;}
+.control-panner {margin-bottom: 20px;}
+
 
 .control-power {
 	grid-area: power; align-self: center;
